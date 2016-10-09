@@ -1,0 +1,36 @@
+<div ng-controller="myGalleryController">
+<div class="row">
+	<div class="small-11 small-centered columns">
+
+		<div class="button-group">
+			<span class="button" ng-click="query = {genre: ''}">All</span>
+			<span class="button" ng-click="query = {genre: 'Action'}">Action</span>
+			<span class="button" ng-click="query = {genre: 'Adventure'}">Adventure</span>
+			<span class="button" ng-click="query = {genre: 'Crime'}">Crime</span>
+			<span class="button" ng-click="query = {genre: 'Comedy'}">Comedy</span>
+			<span class="button" ng-click="query = {genre: 'Drama'}">Drama</span>
+			<span class="button" ng-click="query = {genre: 'Musical'}">Musical</span>
+			<span class="button" ng-click="query = {genre: 'Mystery'}">Mystery</span>
+			<span class="button" ng-click="query = {genre: 'Romance'}">Romance</span>
+			<span class="button" ng-click="query = {genre: 'Sci-Fi'}">Sci-Fi</span>
+			<span class="button" ng-click="query = {genre: 'Thriller'}">Thriller</span>
+			<span class="button" ng-click="query = {genre: 'Western'}">Western</span>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+	<div class="row small-up-1 medium-up-3 large-up-5">
+	    <div class="column" ng-repeat="movie in movieList | filter : query | orderBy : 'rank'">
+	    	<span>
+	    		<a href="./#/details/{{movie.imdbID}}">
+	    			<img ng-src="../data/images/{{movie.imdbID}}.jpg"/>
+	    		</a>
+	    	</span>
+	    </div>
+    </div>	
+
+</div>
