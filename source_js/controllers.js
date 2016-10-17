@@ -5,7 +5,7 @@ app.controller('myListController', ['$scope', '$http',  function($scope, $http) 
 	$http.get('./data/imdb250.json').
 	  success(function(data) {
 	  	$scope.movieList = data;
-	  }).
+	  }). 
 	  error(function(err) {
 	  	console.log(err);
 	  });
@@ -21,6 +21,19 @@ app.controller('myListController', ['$scope', '$http',  function($scope, $http) 
         }
   	];
   	$scope.sortOption = $scope.sortOptions[0];
+
+  	$scope.reverseOptions = [
+        {
+            "id": "true",
+            "label": "Ascending"
+        },
+        {
+            "id": "",
+            "label": "Descending"
+        }
+  	];
+  	$scope.reverseOption = $scope.reverseOptions[1];
+
 }]);
 
 app.controller('myGalleryController', ['$scope', '$http',  function($scope, $http){
